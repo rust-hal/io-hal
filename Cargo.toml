@@ -1,0 +1,12 @@
+[package]
+name = "io-hal"
+description = "IO framework for microcontrollers in Rust"
+version = "0.0.0-zero.1"
+readme = "README.md"
+keywords = ["no-std", "embedded", "io", "io-hal"]
+license = "Apache-2.0"
+authors = ["Boris Vinogradov <no111u3@gmail.com>"]
+edition = "2018"
+repository = "https://github.com/rust-io-hal/io-hal"
+
+[dependencies]
