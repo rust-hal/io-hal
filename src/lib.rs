@@ -1,5 +1,6 @@
 //! ## IO framework for microcontrollers
 //!
+//! Gracefully path of embedded abstraction.
 
 #![no_std]
 #![warn(missing_docs)]
