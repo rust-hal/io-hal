@@ -2,7 +2,7 @@
 //!
 //! Input and Output connectivity traits.
 
-/// Input provide blocking functionality for reading operations.
+/// Input provides blocking functionality for reading operations.
 pub trait Input<T: Copy> {
     /// Input error.
     type Error;
@@ -14,7 +14,7 @@ pub trait Input<T: Copy> {
     fn reads(&mut self, buffer: &mut [T]) -> Result<(), Self::Error>;
 }
 
-/// Output provide blocking functionality for writing operations.
+/// Output provides blocking functionality for writing operations.
 pub trait Output<T: Copy> {
     /// Output error.
     type Error;
@@ -26,7 +26,7 @@ pub trait Output<T: Copy> {
     fn writes(&mut self, buffer: &[T]) -> Result<(), Self::Error>;
 }
 
-/// Exchange provide blocking functionality for reading and writing operations.
+/// Exchange provides blocking functionality for reading and writing operations.
 pub trait Exchange<T: Copy> {
     /// Exchange error.
     type Error;
