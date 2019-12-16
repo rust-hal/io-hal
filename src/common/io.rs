@@ -11,7 +11,7 @@ pub trait Input<T: Copy> {
     fn read(&mut self) -> Result<T, Self::Error>;
 
     /// Read multiple words from the input interface to provided buffer.
-    fn reads(&mut self, buffer: &mut [T]) -> Result<(), Self::Error>;
+    fn read_many(&mut self, buffer: &mut [T]) -> Result<(), Self::Error>;
 }
 
 /// Output provides blocking functionality for writing operations.
@@ -23,7 +23,7 @@ pub trait Output<T: Copy> {
     fn write(&mut self, value: T) -> Result<(), Self::Error>;
 
     /// Write multiple words to the output interface from provided buffer.
-    fn writes(&mut self, buffer: &[T]) -> Result<(), Self::Error>;
+    fn write_many(&mut self, buffer: &[T]) -> Result<(), Self::Error>;
 }
 
 /// Exchange provides blocking functionality for reading and writing operations.
@@ -35,5 +35,5 @@ pub trait Exchange<T: Copy> {
     fn exchange(&mut self, value: &mut T) -> Result<(), Self::Error>;
 
     /// Exchange multiple words through the exchange interface from the provided buffer.
-    fn exchanges(&mut self, buffer: &mut [T]) -> Result<(), Self::Error>;
+    fn exchange_many(&mut self, buffer: &mut [T]) -> Result<(), Self::Error>;
 }
