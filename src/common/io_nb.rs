@@ -4,9 +4,9 @@
 
 /// Non-blocking result
 pub enum NBResult<T, Context> {
-    // Ready for getting a result
+    /// Ready for getting a result
     Ready(T),
-    // Pending to getting a result, returning an current context for rerun sequence.
+    /// Pending to getting a result, returning an current context for rerun sequence.
     Pending(Context),
 }
 
