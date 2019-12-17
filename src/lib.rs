@@ -6,6 +6,7 @@
 #![warn(missing_docs)]
 
 pub mod common;
+pub mod pins;
 
 #[cfg(test)]
 mod tests {
