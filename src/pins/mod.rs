@@ -36,54 +36,26 @@ pub enum PinType {
     Alternate,
 }
 
-/// Common pin configuration.
-pub struct PinConfiguration<PinEnumerateT> {
-    /// Pin number for custom pin representation.
-    pub pin_num: PinEnumerateT,
-    /// Currrent pin type.
-    pub pin_type: PinType,
-    /// Currrent pin mode.
-    pub mode: Mode,
-    /// Currrent pin pull type.
-    pub pull: Pull,
-}
-
-impl<PinEnumerateT> PinConfiguration<PinEnumerateT> {
+/// Common pin configuration trait.
+pub trait PinConfiguration<PinEnumerateT> {
     /// Create a new pin configuration with defaulted configuration.
-    pub fn new(pin_num: PinEnumerateT) -> Self {
-        Self {
-            pin_num,
-            pin_type: PinType::Digital,
-            mode: Mode::Output,
-            pull: Pull::None,
-        }
-    }
+    fn new_pin(&self, pin_num: PinEnumerateT) -> Self;
 
     /// Set Pin type
-    pub fn set_type(&mut self, pin_type: PinType) -> &Self {
-        self.pin_type = pin_type;
-        self
-    }
+    fn set_type(&mut self, pin_type: PinType) -> Self;
 
     /// Set pin mode
-    pub fn set_mode(&mut self, mode: Mode) -> &Self {
-        self.mode = mode;
-        self
-    }
+    fn set_mode(&mut self, mode: Mode) -> Self;
 
     /// Set pin pull
-    pub fn set_pull(&mut self, pull: Pull) -> &Self {
-        self.pull = pull;
-        self
-    }
+    fn set_pull(&mut self, pull: Pull) -> Self;
 }
 
 /// Common pin creator trait.
-pub trait Pin<PinT, PinEnumerateT> {
+pub trait Pin<PinT> {
     /// Pin error type.
     type Error;
 
     /// Create pin from configuration.
-    fn create_pin(&self, pin_config: &PinConfiguration<PinEnumerateT>)
-        -> Result<PinT, Self::Error>;
+    fn create_pin(&mut self) -> Result<PinT, Self::Error>;
 }
