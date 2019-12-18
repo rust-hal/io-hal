@@ -26,6 +26,14 @@ pub enum Mode {
     Bidirection,
 }
 
+/// Append modes for pin.
+pub enum AppendMode {
+    /// Push-pull mode.
+    PushPull,
+    /// Open drain mode.
+    OpenDrain,
+}
+
 /// Common pin types.
 pub enum PinType {
     /// Digital type - allowed digital operations e.g. input, output as fixed values between 0 and 1 logic state.
@@ -46,6 +54,9 @@ pub trait PinConfiguration<PinEnumerateT> {
 
     /// Set pin mode
     fn set_mode(&mut self, mode: Mode) -> Self;
+
+    /// Set append mode
+    fn set_append_mode(&mut self, mode: AppendMode) -> Self;
 
     /// Set pin pull
     fn set_pull(&mut self, pull: Pull) -> Self;
