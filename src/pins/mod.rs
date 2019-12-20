@@ -47,19 +47,19 @@ pub enum PinType {
 /// Common pin configuration trait.
 pub trait PinConfiguration<PinEnumerateT> {
     /// Create a new pin configuration with defaulted configuration.
-    fn new_pin(&self, pin_num: PinEnumerateT) -> Self;
+    fn new_pin(&self, pin_num: PinEnumerateT) -> &mut Self;
 
     /// Set Pin type
-    fn set_type(&mut self, pin_type: PinType) -> Self;
+    fn set_type(&mut self, pin_type: PinType) -> &mut Self;
 
     /// Set pin mode
-    fn set_mode(&mut self, mode: Mode) -> Self;
+    fn set_mode(&mut self, mode: Mode) -> &mut Self;
 
     /// Set append mode
-    fn set_append_mode(&mut self, mode: AppendMode) -> Self;
+    fn set_append_mode(&mut self, mode: AppendMode) -> &mut Self;
 
     /// Set pin pull
-    fn set_pull(&mut self, pull: Pull) -> Self;
+    fn set_pull(&mut self, pull: Pull) -> &mut Self;
 }
 
 /// Common pin creator trait.
