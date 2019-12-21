@@ -46,9 +46,6 @@ pub enum PinType {
 
 /// Common pin configuration trait.
 pub trait PinConfiguration<PinEnumerateT> {
-    /// Create a new pin configuration with defaulted configuration.
-    fn new_pin(&self, pin_num: PinEnumerateT) -> &mut Self;
-
     /// Set Pin type
     fn set_type(&mut self, pin_type: PinType) -> &mut Self;
 
@@ -63,10 +60,10 @@ pub trait PinConfiguration<PinEnumerateT> {
 }
 
 /// Common pin creator trait.
-pub trait Pin<PinT> {
+pub trait Pin<PinEnumerateT, PinT> {
     /// Pin error type.
     type Error;
 
-    /// Create pin from configuration.
-    fn create_pin(&mut self) -> Result<PinT, Self::Error>;
+    /// Create pin from selector with defaulted configuration..
+    fn create_pin(&mut self, pin_num: PinEnumerateT) -> Result<PinT, Self::Error>;
 }
