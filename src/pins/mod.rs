@@ -45,7 +45,7 @@ pub enum PinType {
 }
 
 /// Common pin configuration trait.
-pub trait PinConfiguration<PinEnumerateT> {
+pub trait PinConfiguration {
     /// Set Pin type
     fn set_type(&mut self, pin_type: PinType) -> &mut Self;
 
