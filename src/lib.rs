@@ -7,6 +7,7 @@
 
 pub mod common;
 pub mod pins;
+pub mod serial;
 
 #[cfg(test)]
 mod tests {
