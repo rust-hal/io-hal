@@ -2,6 +2,8 @@
 //!
 //! Operations with chip serial ports.
 
+pub mod usart;
+
 /// Serial port type.
 pub enum SerialPortType {
     /// Synchronous serial port - exchange data packets between reciver and transmitter
