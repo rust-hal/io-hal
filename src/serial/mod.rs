@@ -22,6 +22,14 @@ pub enum SerialPortMode {
     HalfDuplex,
 }
 
+/// Serial priority mode.
+pub enum SerialPriorityMode {
+    /// Master priority.
+    Master,
+    /// Slave priority.
+    Slave,
+}
+
 /// Common serial port configuration trait.
 pub trait SerialPortConfiguration {
     /// Set port type.
@@ -29,4 +37,7 @@ pub trait SerialPortConfiguration {
 
     /// Set port mode.
     fn set_mode(&mut self, mode: SerialPortMode) -> &mut Self;
+
+    /// Set priority mode.
+    fn set_priority_mode(&mut self, mode: SerialPriorityMode) -> &mut Self;
 }
