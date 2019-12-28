@@ -2,6 +2,7 @@
 //!
 //! Operations with chip serial ports.
 
+pub mod spi;
 pub mod usart;
 
 /// Serial port type.
