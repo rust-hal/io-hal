@@ -56,6 +56,16 @@ pub enum StopBitCount {
     S2,
 }
 
+/// Bit length
+pub enum BitLength {
+    /// 7 bit
+    B7,
+    /// 8 bit
+    B8,
+    /// 9 bit
+    B9,
+}
+
 /// Usart configuration trait.
 pub trait UsartConfiguration {
     /// Set baud rate.
@@ -66,4 +76,7 @@ pub trait UsartConfiguration {
 
     /// Set stop bit.
     fn set_stop_bit(&mut self, stop: StopBitCount) -> &mut Self;
+
+    /// Set bit length.
+    fn set_bit_length(&mut self, bit_length: BitLength) -> &mut Self;
 }
