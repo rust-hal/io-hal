@@ -36,8 +36,34 @@ pub enum BaudRate {
     BUser(usize),
 }
 
+/// Parity check mode
+pub enum ParityCheck {
+    /// No checks
+    None,
+    /// Odd checks
+    Odd,
+    /// Even checks
+    Even,
+}
+
+/// Stop bit count
+pub enum StopBitCount {
+    /// 1 bit
+    S1,
+    /// 1.5 bit
+    S1_5,
+    /// 2 bit
+    S2,
+}
+
 /// Usart configuration trait.
 pub trait UsartConfiguration {
     /// Set baud rate.
     fn set_baud_rate(&mut self, baud_rate: BaudRate) -> &mut Self;
+
+    /// Set parity check.
+    fn set_parity_check(&mut self, parity: ParityCheck) -> &mut Self;
+
+    /// Set stop bit.
+    fn set_stop_bit(&mut self, stop: StopBitCount) -> &mut Self;
 }
