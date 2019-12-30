@@ -21,31 +21,31 @@ pub enum Polarity {
 /// Bit length of data transfer.
 pub enum BitLength {
     /// 4 bit
-    B4,
+    Four,
     /// 5 bit
-    B5,
+    Five,
     /// 6 bit
-    B6,
+    Six,
     /// 7 bit
-    B7,
+    Seven,
     /// 8 bit
-    B8,
+    Eight,
     /// 9 bit
-    B9,
+    Nine,
     /// 10 bit
-    B10,
+    Ten,
     /// 11 bit
-    B11,
+    Eleven,
     /// 12 bit
-    B12,
+    Twelve,
     /// 13 bit
-    B13,
+    Thirteen,
     /// 14 bit
-    B14,
+    Fourteen,
     /// 15 bit
-    B15,
+    Fifteen,
     /// 16 bit
-    B16,
+    Sixteen,
 }
 
 /// Spi configuration trait.
