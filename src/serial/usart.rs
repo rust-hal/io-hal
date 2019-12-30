@@ -58,6 +58,10 @@ pub enum StopBitCount {
 
 /// Bit length
 pub enum BitLength {
+    /// 5 bit
+    B5,
+    /// 6 bit
+    B6,
     /// 7 bit
     B7,
     /// 8 bit
