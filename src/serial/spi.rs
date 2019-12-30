@@ -18,6 +18,36 @@ pub enum Polarity {
     High,
 }
 
+/// Bit length of data transfer.
+pub enum BitLength {
+    /// 4 bit
+    B4,
+    /// 5 bit
+    B5,
+    /// 6 bit
+    B6,
+    /// 7 bit
+    B7,
+    /// 8 bit
+    B8,
+    /// 9 bit
+    B9,
+    /// 10 bit
+    B10,
+    /// 11 bit
+    B11,
+    /// 12 bit
+    B12,
+    /// 13 bit
+    B13,
+    /// 14 bit
+    B14,
+    /// 15 bit
+    B15,
+    /// 16 bit
+    B16,
+}
+
 /// Spi configuration trait.
 pub trait SpiConfiguration {
     /// Set port bitrate
@@ -28,4 +58,7 @@ pub trait SpiConfiguration {
 
     /// Set clock polarity.
     fn set_polarity(&mut self, polarity: Polarity) -> &mut Self;
+
+    /// Set bit length.
+    fn set_bit_length(&mut self, bit_length: BitLength) -> &mut Self;
 }
