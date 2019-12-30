@@ -7,7 +7,7 @@ pub enum Phase {
     /// Forward front of the clock signals.
     Forward,
     /// Backward front of the clock signals.
-    BaudRate,
+    Backward,
 }
 
 /// Clock signals polarity types.
