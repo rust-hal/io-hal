@@ -5,35 +5,35 @@
 /// Usart speed - BaudRate
 pub enum BaudRate {
     /// 110 bod
-    B110,
+    Baud110,
     /// 300 bod
-    B300,
+    Baud300,
     /// 600 bod
-    B600,
+    Baud600,
     /// 1200 bod
-    B1200,
+    Baud1200,
     /// 2400 bod
-    B2400,
+    Baud2400,
     /// 4800 bod
-    B4800,
+    Baud4800,
     /// 9600 bod
-    B9600,
+    Baud9600,
     /// 14400 bod
-    B14400,
+    Baud14400,
     /// 19200 bod
-    B19200,
+    Baud19200,
     /// 38400 bod
-    B38400,
+    Baud38400,
     /// 57600 bod
-    B57600,
+    Baud57600,
     /// 115200 bod
-    B115200,
+    Baud115200,
     /// 128000 bod
-    B128000,
+    Baud128000,
     /// 256000 bod
-    B256000,
+    Baud256000,
     /// User defined bod
-    BUser(usize),
+    BaudUser(usize),
 }
 
 /// Parity check mode
@@ -49,25 +49,25 @@ pub enum ParityCheck {
 /// Stop bit count
 pub enum StopBitCount {
     /// 1 bit
-    S1,
+    One,
     /// 1.5 bit
-    S1_5,
+    OneAndAHalf,
     /// 2 bit
-    S2,
+    Two,
 }
 
 /// Bit length
 pub enum BitLength {
     /// 5 bit
-    B5,
+    Five,
     /// 6 bit
-    B6,
+    Six,
     /// 7 bit
-    B7,
+    Seven,
     /// 8 bit
-    B8,
+    Eight,
     /// 9 bit
-    B9,
+    Nine,
 }
 
 /// Usart configuration trait.
