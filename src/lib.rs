@@ -5,6 +5,7 @@
 #![no_std]
 #![warn(missing_docs)]
 
+pub mod block;
 pub mod common;
 pub mod pins;
 pub mod serial;
