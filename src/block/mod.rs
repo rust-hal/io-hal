@@ -14,10 +14,10 @@ pub trait BlockReader<T: Copy> {
     type Error;
 
     /// Read one block from the device by provided address.
-    fn read_block(&mut self, address: usize) -> Result<T, Self::Error>;
+    fn read_block(&mut self, address: *mut T) -> Result<T, Self::Error>;
 
     /// Read many blocks from the device by provided address and buffer.
-    fn read_many_blocks(&mut self, address: usize, buffer: &mut [T]) -> Result<(), Self::Error>;
+    fn read_many_blocks(&mut self, address: *mut T, buffer: &mut [T]) -> Result<(), Self::Error>;
 }
 
 /// Block device writer trait.
@@ -26,8 +26,8 @@ pub trait BlockWriter<T: Copy> {
     type Error;
 
     /// Write one block to the device by provided address.
-    fn write_block(&mut self, address: usize, block: T) -> Result<(), Self::Error>;
+    fn write_block(&mut self, address: *mut T, block: T) -> Result<(), Self::Error>;
 
     /// Write many blocks to the device by provided address and buffer.
-    fn write_many_blocks(&mut self, address: usize, buffer: &mut [T]) -> Result<(), Self::Error>;
+    fn write_many_blocks(&mut self, address: *mut T, buffer: &mut [T]) -> Result<(), Self::Error>;
 }
