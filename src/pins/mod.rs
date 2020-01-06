@@ -11,9 +11,9 @@ pub enum Pull {
     /// No pull
     None,
     /// Pull-up - pin pulled up to i/o power rail.
-    PullUp,
+    Up,
     /// Pull-down - pin pulled down to i/o ground rail.
-    PullDown,
+    Down,
 }
 
 /// Common pin modes.
