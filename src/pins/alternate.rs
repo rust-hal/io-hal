@@ -2,7 +2,7 @@
 
 /// Alternate selector for the pin in alternate mode.
 pub enum AlternateMode {
-    /// Inter-intgrated circuit.
+    /// Inter-integrated circuit.
     I2c(usize),
     /// Serial peripheral interface.
     Spi(usize),
