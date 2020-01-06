@@ -22,7 +22,7 @@ pub enum Mode {
     Input,
     /// Output mode
     Output,
-    /// Bidirection mode
+    /// Bidirectional mode
     Bidirection,
 }
 
