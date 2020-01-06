@@ -16,14 +16,14 @@ pub enum Pull {
     Down,
 }
 
-/// Common pin modes.
-pub enum Mode {
+/// Common pin direction.
+pub enum Direction {
     /// Input mode
     Input,
     /// Output mode
     Output,
     /// Bidirectional mode
-    Bidirection,
+    Bidi,
 }
 
 /// Append modes for pin.
@@ -49,8 +49,8 @@ pub trait PinConfiguration {
     /// Set Pin type
     fn set_type(&mut self, pin_type: PinType) -> &mut Self;
 
-    /// Set pin mode
-    fn set_mode(&mut self, mode: Mode) -> &mut Self;
+    /// Set pin direction
+    fn set_direction(&mut self, mode: Direction) -> &mut Self;
 
     /// Set append mode
     fn set_append_mode(&mut self, mode: AppendMode) -> &mut Self;
