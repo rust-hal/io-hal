@@ -2,6 +2,7 @@
 //!
 //! Operations with chip block i/o.
 
+pub mod backup_sram;
 pub mod eeprom;
 pub mod flash;
 
