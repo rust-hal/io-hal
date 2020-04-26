@@ -1,6 +1,6 @@
 //! ## Serial specific part of library
 //!
-//! Operations with chip serial ports.
+//! Operations with serial I/O peripherals.
 
 pub mod i2c;
 pub mod spi;
@@ -24,11 +24,11 @@ pub enum SerialPortMode {
     HalfDuplex,
 }
 
-/// Serial priority mode.
-pub enum SerialPriorityMode {
-    /// Master priority.
+/// Serial role mode.
+pub enum SerialRoleMode {
+    /// Master role.
     Master,
-    /// Slave priority.
+    /// Slave role.
     Slave,
 }
 
@@ -40,6 +40,6 @@ pub trait SerialPortConfiguration {
     /// Set port mode.
     fn set_mode(&mut self, mode: SerialPortMode) -> &mut Self;
 
-    /// Set priority mode.
-    fn set_priority_mode(&mut self, mode: SerialPriorityMode) -> &mut Self;
+    /// Set role mode.
+    fn set_role_mode(&mut self, mode: SerialRoleMode) -> &mut Self;
 }
